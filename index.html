@@ -62,30 +62,28 @@
 
     const message = document.querySelector('.message')
     const card = document.querySelector('.thankyou_card')
-    let count = 0;
+    let checked;
 
-    // HOVER EFFECTS ON RATING
-    ratings.forEach(btn => {
-        console.log(btn)
+    // KEEP TRACKING OF LAST CHECKED RATING
+    ratings.forEach(element => {
+      element.addEventListener('click', () => {
 
-        btn.addEventListener('click', () => {
-          btn.classList.toggle('active')
-        })
+        checked = element.textContent;
+
       })
-    
+    })
+
     // HANDLING SUBMIT BUTTON
     submitBtn.addEventListener('click', handleSubmit);
 
     function handleSubmit(){
-      ratings.forEach(btn => {
-        if(btn.classList.contains('active')){
-          count++ ;
-        }
-      })
 
       card.style.display = 'flex';
-      message.textContent = `You selected ${count} out of 5`;
+
+      message.textContent = `You selected ${checked} out of 5`;
+
     }
+
   </script>
 </body>
 </html>

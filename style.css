@@ -110,6 +110,10 @@ label:hover{
     background-color: hsl(217, 12%, 63%);
 }
 
+input:checked + label{
+    background-color: hsl(25, 97%, 53%);
+}
+
 .active,
 .active:hover{
     background-color: hsl(25, 97%, 53%);
